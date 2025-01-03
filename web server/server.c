@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <arpa/inet.h>
+#include <winsock2.h>
+#include <ws2tcpip.h>
 
 #define PORT 8080
 #define BUFFER_SIZE 1024
@@ -38,7 +39,7 @@ int main(){
     // listen for incoming request
     if (listen(server_fd, 3) < 0){
         perror("Listened failed");
-        exit(EXIT_FAILURE)
+        exit(EXIT_FAILURE);
 
     }
 
